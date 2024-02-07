@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Password Generator</title>
+
+    <meta name="description" content="website description">
+
+    <link rel="icon" type="image/x-icon" href="">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/generator.js" defer></script>
+</head>
+<body>
+    <main class="main">
+        <div class="block-padding">
+            <section class="hero">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar__wrapper">
+                            <a href="/">
+                                <img src="./assets/images/logo.svg" alt="logo" class="navbar__logo">
+                            </a>
+                            <a href="#" class="btn btn--primary">Get Dashlane free</a>
+                        </div>
+                    </div>
+                </nav>
+                
+                <div class="container">
+                    <div class="hero__wrapper">
+                        <div>
+                            <span>PASSWORD GENERATOR TOOL</span>
+                            <h1 class="hero__title">Generate a Unique, Secure password</h1>
+                            <p class="hero__description">Use our online password generator to instantly create a secure, random password.</p>
+                            <div class="hero__buttons">
+                                <a href="#" class="btn btn--white">Get Dashlane free</a>
+                                <a href="#" class="btn btn-outline--white">Explore more</a>
+                            </div>
+                        </div>
+                        <img src="./assets/images/access-control-system.svg" alt="access-control-system" class="hero__img">
+                    </div>
+    
+                    <div class="generator">
+                        <div class="generator__input">
+                            <input id="passwordInput" type="text">
+                            <img id="copyBtn" class="copy-icon" src="./assets/icons/copy.svg" alt="copy">
+                            <img id="refreshBtn" class="refresh-icon" src="./assets/icons/refresh.svg" alt="refresh">
+                        </div>
+                        <div class="card card--green">
+                            <h2 class="generator__title">Customize your password</h2>
+                            <form id="passwordGeneratorForm">
+                                <div class="generator__options">
+                                    <div>
+                                        <label class="password-length-label" for="characterAmountRange">Password Length</label>
+                                        <div class="generator__options--range">
+                                            <input id="characterAmountRange" type="range" name="password-length" min="1" max="50" value="12">
+                                            <input id="characterAmountNumber" type="number" min="1" max="50" value="12">
+                                        </div>
+                                        <button class="btn btn--primary generator__btn">Copy password</button>
+                                    </div>
+                                    <div>
+                                        <label class="label-radio" for="includeEasyToSay">
+                                            <input type="radio" id="includeEasyToSay" name="radio" value="easy-to-say">
+                                            Easy to say
+                                            <span class="checkmark"></span>
+                                        </label>
+        
+                                        <label class="label-radio" for="includeEasyToRead">
+                                            <input type="radio" id="includeEasyToRead" name="radio" value="easy-to-ready">
+                                            Easy to read
+                                            <span class="checkmark"></span>
+                                        </label>
+        
+                                        <label class="label-radio" for="includeAllCharacters">
+                                            <input type="radio" id="includeAllCharacters" name="radio" value="all-characters" checked>
+                                            All characters
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label class="label-checkbox" for="includeUppercase">
+                                            <input type="checkbox" id="includeUppercase" name="uppercase" value="uppercase">
+                                            Uppercase
+                                            <span class="checkmark"></span>
+                                        </label>
+        
+                                        <label class="label-checkbox" for="includeLowercase">
+                                            <input type="checkbox" id="includeLowercase" name="lowercase" value="lowercase">
+                                            Lowercase
+                                            <span class="checkmark"></span>
+                                        </label>
+        
+                                        <label class="label-checkbox" for="includeNumbers">
+                                            <input type="checkbox" id="includeNumbers" name="numbers" value="numbers">                                    
+                                            Numbers
+                                            <span class="checkmark"></span>
+                                        </label>
+        
+                                        <label class="label-checkbox" for="includeSymbols">
+                                            <input type="checkbox" id="includeSymbols" name="symbols" value="symbols">
+                                            Symbols
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="how-to">
+                <div class="container">
+                    <h2 class="how-to__title subtitle">How to make a good strong password</h2>
+                    <div class="how-to__wrapper">
+                        <div class="card card--green">
+                            <h3 class="card__title">A strong password has:</h3>
+                            <ul class="card__list">
+                                <li>At least <b>15 characters</b></li>
+                                <li><b>Uppercase letters</b></li>
+                                <li><b>Lowercase letters</b></li>
+                                <li><b>Numbers</b></li>
+                                <li><b>Symbols,</b> such as <span>`!”?$?%^&*()_–+={[}]:;@‘~#|<,>.?/</span></li>
+                            </ul>
+                        </div>
+                        <div class="card card--red">
+                            <h3 class="card__title">A strong password is:</h3>
+                            <ul class="card__list">
+                                <li>Not your <b>username</b></li>
+                                <li>Not your <b>name</b>, your <b>friend’s name</b>, your <b>family member’s name</b>, or a <b>common name</b></li>
+                                <li>Not your <b>date of birth</b></li>
+                                <li>Not a dictionary <b>word</b></li>
+                                <li>Not like your <b>previous passwords</b></li>
+                                <li>Not a <b>keyboard pattern</b>, such as <span>qwerty, asdfghjkl, or 12345678</span></li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div id="banner1" class="banner">
+                        <div class="banner__wrapper">
+                            <h2 class="banner__title subtitle subtitle--white">Ready to protect your passwords?</h2>
+                            <div class="banner__buttons">
+                                <a href="#" class="btn btn--white">Get Dashlane now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="save-secure">
+                <div class="container">
+                    <div class="save-secure__wrapper">
+                        <div>
+                            <h2 class="subtitle">Save and secure all your passwords with a password manager tool</h2>
+                            <p class="save-secure__description">Save all your passwords so you will never forget them again, with this password generator tool that  will also produce the best passwords for you.</p>
+                            <a href="#" class="btn btn--primary">Get yours now</a>
+                            <img src="./assets/images/save-secure.svg" alt="" class="save-secure__img">
+                        </div>
+                        <div class="panels">
+                            <div class="panel active">
+                                <div class="panel__header">
+                                    <h3 class="panel__title">Let’s start with the facts</h3>
+                                </div>
+                                <p class="panel__description">
+                                    As more people are shopping online while trying to avoid crowded stores, they are easier prey for hackers and scammers. A Google study conducted in 2019 found that 52% of individuals use one password on many sites and 13% admit they use one password for everything.
+    
+                                    Also, more than 2.5 billion accounts were estimated to have been hacked in 2018, which amounts to around 6.85 million accounts being hacked each day, or roughly 158 every second. Every 2 out of 5 individuals have been a victim of identity theft, had their passwords compromised, or their sensitive information breached due to having outdated or duplicate passwords. And finally, poor password security is the cause of more than 80% of data breaches.
+                                </p>
+                            </div>
+                            <div class="panel">
+                                <div class="panel__header">
+                                    <h3 class="panel__title">How hackers invade your accounts and devices</h3>
+                                </div>
+                                <p class="panel__description">
+                                    As more people are shopping online while trying to avoid crowded stores, they are easier prey for hackers and scammers. A Google study conducted in 2019 found that 52% of individuals use one password on many sites and 13% admit they use one password for everything.
+    
+                                    Also, more than 2.5 billion accounts were estimated to have been hacked in 2018, which amounts to around 6.85 million accounts being hacked each day, or roughly 158 every second. Every 2 out of 5 individuals have been a victim of identity theft, had their passwords compromised, or their sensitive information breached due to having outdated or duplicate passwords. And finally, poor password security is the cause of more than 80% of data breaches.
+                                </p>
+                            </div>
+                            <div class="panel">
+                                <div class="panel__header">
+                                    <h3 class="panel__title">Secure your information</h3>
+                                </div>
+                                <p class="panel__description">
+                                    As more people are shopping online while trying to avoid crowded stores, they are easier prey for hackers and scammers. A Google study conducted in 2019 found that 52% of individuals use one password on many sites and 13% admit they use one password for everything.
+    
+                                    Also, more than 2.5 billion accounts were estimated to have been hacked in 2018, which amounts to around 6.85 million accounts being hacked each day, or roughly 158 every second. Every 2 out of 5 individuals have been a victim of identity theft, had their passwords compromised, or their sensitive information breached due to having outdated or duplicate passwords. And finally, poor password security is the cause of more than 80% of data breaches.
+                                </p>
+                            </div>
+                            <div class="panel">
+                                <div class="panel__header">
+                                    <h3 class="panel__title">What are password generators?</h3>
+                                </div>
+                                <p class="panel__description">
+                                    As more people are shopping online while trying to avoid crowded stores, they are easier prey for hackers and scammers. A Google study conducted in 2019 found that 52% of individuals use one password on many sites and 13% admit they use one password for everything.
+    
+                                    Also, more than 2.5 billion accounts were estimated to have been hacked in 2018, which amounts to around 6.85 million accounts being hacked each day, or roughly 158 every second. Every 2 out of 5 individuals have been a victim of identity theft, had their passwords compromised, or their sensitive information breached due to having outdated or duplicate passwords. And finally, poor password security is the cause of more than 80% of data breaches.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="benefits">
+            <div class="container">
+                <h2 class="benefits__title subtitle">Benefits of using a password generator</h2>
+                <p class="benefits__description">There are plenty of benefits when you use a password generator, let’s check it out. All benefits below.</p>
+            </div>
+            <div class="benefits__cards">
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/shield-tick.svg" alt="shield-tick">
+                    </span>
+                    <h3 class="card__title">Safeguard your data</h3>
+                    <p>One way to gain access to your important personal information is by figuring out your password. By using a password generator, your data will stay secured with a strong password for each account you choose.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/password-check.svg" alt="password-check">
+                    </span>
+                    <h3 class="card__title">Creates unique passwords</h3>
+                    <p>The password-generating tool combines numbers, letters, and special characters to create complex, hard-to-guess passwords so you won’t have to try to think something up yourself.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/element-3.svg" alt="element-3">
+                    </span>
+                    <h3 class="card__title">Manage all your passwords in one place</h3>
+                    <p>The beauty of a password generator program is that not only do they generate a password for you, but these password tools save all your passwords too. This means you won’t have to try to remember them all in your head or risk someone seeing your passwords by writing them down.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/emoji-happy.svg" alt="emoji-happy">
+                    </span>
+                    <h3 class="card__title">Easy to use</h3>
+                    <p>Password creation tools are generally very basic and user-friendly. You don’t have to read a long, drawn-out instruction manual or take a special class to learn how to use one.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/security-user.svg" alt="security-user">
+                    </span>
+                    <h3 class="card__title">Keeps you organized</h3>
+                    <p>A password generation tool can help you stay neat and organized with all your passwords kept secured in one place. Without one, you may find yourself writing your passwords down everywhere.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/login.svg" alt="login">
+                    </span>
+                    <h3 class="card__title">They login for you</h3>
+                    <p>It can be a big hassle to have to log in with your user name and password at every site you visit. With a password generator in place, you will no longer waste any time logging in to your account since it does it all for you.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/shield-search.svg" alt="shield-search">
+                    </span>
+                    <h3 class="card__title">Some keep track of more than just your password</h3>
+                    <p>These tools may also keep track of other important information, such as first and last name, address, phone number, email, and more. You type this information into the password generator one time and save it for use later when it is needed to fill out another online form.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/task.svg" alt="task">
+                    </span>
+                    <h3 class="card__title">It automatically fills in required information</h3>
+                    <p>Whether you are visiting an unrecognized new website or a site you visit often, the password generator will pop up anytime it can help and add information for you.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/timer.svg" alt="timer">
+                    </span>
+                    <h3 class="card__title">Saves you lots of time</h3>
+                    <p>You probably already know how time-consuming it can be to fill out an online form, especially when trying to compare quotes. It can literally take hours to fill in the same information multiple times on each website you visit. The Password generator saves you a lot of time by filling in all the information for you.</p>
+                </div>
+                <div class="card card--white">
+                    <span class="card__icon">
+                        <img src="./assets/icons/money-4.svg" alt="money">
+                    </span>
+                    <h3 class="card__title">Saves you money</h3>
+                    <p>Password generating tools are probably the best investment for anyone, especially if you are a business owner or someone who spends a lot of time online. They are affordably priced and can save you a lot of money by not allowing hackers to steal and use your important information.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="block-padding">
+            <section class="secure">
+                <div class="container">
+                    <div class="secure__wrapper">
+                        <div>
+                            <h2 class="subtitle">Secure all your online accounts</h2>
+                            <p class="secure__description">Don’t become the next victim of hacking, secure your passwords with a password manager today.</p>
+                            <a href="#" class="btn btn--primary">Try it now</a>
+                        </div>
+                        <img src="./assets/images/secure-accounts.svg" alt="">
+                    </div>
+    
+                    <div id="banner2" class="banner banner--centered">
+                        <div class="banner__wrapper">
+                            <h2 class="banner__title subtitle subtitle--white">Try Dashlane for Free</h2>
+                            <div class="banner__buttons">
+                                <a href="#" class="btn btn--white">Get Dashlane</a>
+                                <a href="#" class="btn btn-outline--white">Download Dashlane extension</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer__wrapper">
+                        <div>
+                            <img src="./assets/images/logo-white.svg" alt="logo" class="footer__logo">
+                        </div>
+                        <div class="footer__list">
+                            <ul class="footer__menu">
+                                <li class="footer__item">Company</li>
+                                <li class="footer__item"><a href="#">About</a></li>
+                                <li class="footer__item"><a href="#">Terms</a></li>
+                                <li class="footer__item"><a href="#">Contact us</a></li>
+                                <li class="footer__item"><a href="#">Work with us</a></li>
+                            </ul>
+                            <ul class="footer__menu">
+                                <li class="footer__item">Company</li>
+                                <li class="footer__item"><a href="#">About</a></li>
+                                <li class="footer__item"><a href="#">Terms</a></li>
+                                <li class="footer__item"><a href="#">Contact us</a></li>
+                                <li class="footer__item"><a href="#">Work with us</a></li>
+                            </ul>
+                            <ul class="footer__menu">
+                                <li class="footer__item">Company</li>
+                                <li class="footer__item"><a href="#">About</a></li>
+                                <li class="footer__item"><a href="#">Terms</a></li>
+                                <li class="footer__item"><a href="#">Contact us</a></li>
+                                <li class="footer__item"><a href="#">Work with us</a></li>
+                            </ul>
+                            <ul class="footer__menu">
+                                <li class="footer__item">Company</li>
+                                <li class="footer__item"><a href="#">About</a></li>
+                                <li class="footer__item"><a href="#">Terms</a></li>
+                                <li class="footer__item"><a href="#">Contact us</a></li>
+                                <li class="footer__item"><a href="#">Work with us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="footer-bottom">
+                        <p class="footer__copyright">Copyright © 2022 password-generator. All rights reserved</p>
+                        <div class="footer__socials">
+                            <a href="#">
+                                <img src="./assets/icons/facebook.svg" alt="facebook" class="footer__social">
+                            </a>
+                            <a href="#">
+                                <img src="./assets/icons/instagram.svg" alt="instagram" class="footer__social">
+                            </a>
+                            <a href="#">
+                                <img src="./assets/icons/twitter.svg" alt="twitter" class="footer__social">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <div id="popup" class="popup">
+        <div class="popup-box">
+            <div class="popup__header">
+                <img src="./assets/icons/tick-circle-red.svg" alt="">
+                <span>Copied!</span>
+            </div>
+            <div class="popup__wrapper">
+                <div>
+                    <h2 class="subtitle">Make that password easy to remember with Dashlane</h2>
+                    <p>Dashlane does more than generate secure passwords. Try Premium for 30 days and let Dashlane remember and autofill passwords for you. Sign up for free – no credit card required.</p>
+                    <div class="popup__footer">
+                        <button class="btn btn-outline--grey popup__btn--close">No, thanks</button>
+                        <a href="#" class="btn btn--primary">Get Dashland free</a>
+                    </div>
+                </div>
+                <img src="./assets/images/vpn-protected.png" width="380" height="320" alt="vpn protected" class="popup__img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
